@@ -27,8 +27,8 @@ jobs:
       - uses: actions/cache@v4
         with:
           path: Library
-          key: Library-test-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
-          restore-keys: Library-test-
+          key: Library-test-v2-${{ matrix.testMode }}-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: Library-test-v2-${{ matrix.testMode }}-
       - uses: game-ci/unity-test-runner@v4
         id: tests
         env:
