@@ -8,7 +8,7 @@ public class SampleSceneEditModeTests
     {
         const string scenePath = "Assets/Scenes/SampleScene.unity";
 
-        Assert.IsNotNull(AssetDatabase.LoadAssetAtPath<SceneAsset>(scenePath));
+        Assert.IsNull(AssetDatabase.LoadAssetAtPath<SceneAsset>(scenePath));
         Assert.That(EditorBuildSettings.scenes, Has.Some.Matches<EditorBuildSettingsScene>(
             scene => scene.enabled && scene.path == scenePath));
     }
